@@ -1,0 +1,30 @@
+
+
+.navbar {
+    margin-bottom: 20px; 
+}
+
+.navbar-brand {
+    font-weight: bold; 
+}
+
+.nav-link {
+    font-size: 1.1rem; 
+    color: white;
+    margin-right: 15px; 
+}
+
+.nav-link:hover {
+    color: #ffcc00 !important; 
+    text-decoration: underline; 
+}
+
+button {
+    margin-left: 15px; 
+}
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075) !important; 
+    padding: 5px;
+    border-radius: 10px;
+}

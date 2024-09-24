@@ -1,0 +1,56 @@
+.game-container {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color: #f0f4f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+h3 {
+    font-family: 'Arial', sans-serif;
+    color: #007bff;
+}
+
+.form-section {
+    margin: 20px 0;
+}
+
+.input-field {
+    margin-bottom: 10px;
+}
+
+.game-info {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.move-buttons {
+    margin: 15px 0;
+}
+
+.move-buttons .btn {
+    margin: 5px;
+}
+
+.game-button, .confirm-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.game-button:hover, .confirm-button:hover {
+    background-color: #0056b3;
+}
