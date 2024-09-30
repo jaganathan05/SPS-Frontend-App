@@ -36,7 +36,7 @@ function Login() {
         };
 
         try {
-            const response = await axios.post('http://localhost:4000/login', data);
+            const response = await axios.post('http://54.85.8.79:4000/login', data);
 
             if (response && response.data) {
                 localStorage.setItem('username', response.data.playerName)
@@ -54,13 +54,13 @@ function Login() {
     };
 
     return (
-        <div>
-            <Form noValidate validated={isValidated} className="register-container" onSubmit={onLogin}>
+        <div  className="register-container">
+            <Form noValidate validated={isValidated} className="register-box" onSubmit={onLogin}>
                 <h3 className="mb-3">Login</h3>
 
                
                 <Form.Group>
-                    <Form.Label className="text-start d-block mb-2">Email</Form.Label>
+                    <Form.Label className="form-label text-start d-block mt-2 mb-2">Email</Form.Label>
                     <Form.Control
                         placeholder="Enter Your Email"
                         type="email"
@@ -75,9 +75,9 @@ function Login() {
 
                
                 <Form.Group>
-                    <Form.Label className="text-start d-block mb-2">Password</Form.Label>
+                    <Form.Label className="form-label text-start d-block mt-2 mb-2">Password</Form.Label>
                     <Row>
-                        <Col xs={10}>
+                        <Col xs={9}>
                             <Form.Control
                                 placeholder="Enter Password"
                                 type={!showPassword ? 'password' : 'text'}
@@ -91,21 +91,21 @@ function Login() {
                         </Col>
                         <Col xs={2}>
                             <Button
-                                variant="secondary"
+                                variant="dark"
                                 onClick={() => setShowPassword((prev) => !prev)}
                                 type="button"
                             >
-                                {showPassword ? 'Hide' : 'Show'}
+                                {showPassword ? <i className="bi bi-eye-slash"></i> : <i className="bi bi-eye"></i>}
                             </Button>
                         </Col>
                     </Row>
                 </Form.Group>
 
                 
-                <Button type="submit" className="mt-4">Submit</Button>
+                <Button type="submit" className="mt-4 mb-4">Submit</Button>
 
                 
-                <p>If You Don't Have An Account <Link to={'/register'}>Register!</Link></p>
+                <p className='text-light'>If You Don't Have An Account <Link  className="text-decoration-none text-bg-warning"  to={'/register'}>Register!</Link></p>
             </Form>
         </div>
     );

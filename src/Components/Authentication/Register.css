@@ -1,12 +1,53 @@
+@font-face {
+    font-family: 'Lemon Milk';
+    src: url(/public/Fonts/LEMONMILK-Bold.otf);
+}
+@font-face {
+    font-family: 'Label';
+    src: url(/public/Fonts/MADECarvingSoftPERSONALUSE-SemiBold.otf);
+}
 .register-container{
-    margin-left: 25%;
-    margin-top: 100px ;
-    align-items: start;
-    width: 50%;
-    height: auto;
-    background-color: rgb(37, 238, 10);
-    padding: 20px;
-    border: 2px solid seagreen;
-    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
 
+.register-box h3{
+    font-family: 'Lemon Milk';
+    color: black;
+    letter-spacing: 2px;
+}
+
+.register-box{
+    border: 2px solid rgb(250, 9, 9);
+    border-radius: 10px;
+    width: 600px;
+    height : auto ;
+    padding: 20px;
+    background: #fc4a1a;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.form-label{
+    font-family: 'Label';
+}
+
+@media (max-width: 600px) {
+    .register-box {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .register-container {
+        margin: 10px ;
+        margin-top: 30%;
+    }
+
+    .link {
+       
+        font-size: 15px;
+       
+    }
 }

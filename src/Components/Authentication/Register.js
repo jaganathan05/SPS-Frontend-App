@@ -7,7 +7,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
     const navigate = useNavigate()
-    const [formvalid,setformvalid] = useState(false)
     const [isvalidated,setValidated]=useState(false)
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
@@ -16,6 +15,7 @@ function Register() {
 
     const onRegister = async(e) => {
         e.preventDefault();
+        let formvalid = false
        
         if (name.trim().length <= 2) {
             alert('Enter a valid Name (min 3 characters)');
@@ -33,7 +33,7 @@ function Register() {
             return;
         }
         
-            setformvalid(true)
+            formvalid = true
             setValidated(true)
             
           
@@ -46,7 +46,7 @@ function Register() {
       } 
       console.log(data)
 
-      const response = await axios.post('http://localhost:4000/register',
+      const response = await axios.post('http://54.85.8.79:4000/register',
         data
       )
 
@@ -66,13 +66,14 @@ function Register() {
 }
 
     return (
-        <div>
-            <Form validated={isvalidated} className="register-container" onSubmit={onRegister}>
+        <div className="register-container">
+            <Form validated={isvalidated} className='register-box' onSubmit={onRegister}>
                 <h3 className="mb-3">Register</h3>
+                
 
              
                 <Form.Group>
-                    <Form.Label className='text-start d-block mb-2'>Name</Form.Label>
+                    <Form.Label className='form-label text-start d-block mb-2'>Name</Form.Label>
                     <Form.Control
                         placeholder="Enter Your Name"
                         type="text"
@@ -83,7 +84,7 @@ function Register() {
 
              
                 <Form.Group>
-                    <Form.Label className="text-start d-block mb-2">Email</Form.Label>
+                    <Form.Label className="form-label text-start d-block mt-2 mb-2">Email</Form.Label>
                     <Form.Control
                         placeholder="Enter Your Email"
                         type="email"
@@ -94,9 +95,9 @@ function Register() {
 
                
                 <Form.Group>
-                    <Form.Label className="text-start d-block mb-2">Password</Form.Label>
+                    <Form.Label className="form-label text-start d-block mt-2 mb-2">Password</Form.Label>
                     <Row>
-                        <Col xs={10}>
+                        <Col xs={9}>
                             <Form.Control
                                 placeholder="Enter Password"
                                 type={!showPassword ? 'password' : 'text'}
@@ -104,23 +105,24 @@ function Register() {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </Col>
+                     
                         <Col xs={2}>
                             <Button
-                                variant="secondary"
+                                variant="dark"
                                 onClick={() => setShowPassword((prev) => !prev)}
                                 type="button"
                             >
-                                {showPassword ? 'Hide' : 'Show'}
+                                {showPassword ? <i className="bi bi-eye-slash"></i> : <i className="bi bi-eye"></i> }
                             </Button>
                         </Col>
                     </Row>
                 </Form.Group>
 
                
-                <Button type="submit" className="mt-4">Submit</Button>
+                <Button type="submit" className="mt-4 mb-4">Submit</Button>
 
               
-                <p>If You Have An Account <Link to={'/login'}>Login!</Link></p>
+                <p className="text-light">If You Have An Account <Link to={'/login'} className="text-decoration-none text-bg-warning" >Login!</Link></p>
             </Form>
         </div>
     );
