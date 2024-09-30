@@ -153,18 +153,10 @@ function Home() {
                     </div>
                     {gameState?.game?.gameId ? (
                         <>
-                            <h3>
+                            <p>
                                 Game Id: {gameState.game.gameId || 'Unavailable'}
-                                {gameState.game.gameId && (
-                                    <Button 
-                                        onClick={() => navigator.clipboard.writeText(gameState.game.gameId)}
-                                        className="btn-success"
-                                        style={{ marginLeft: '10px' }}
-                                    >
-                                        <i className="bi bi-clipboard"></i>
-                                    </Button>
-                                )}
-                            </h3>
+                               
+                            </p>
                             <h3>Game Status: {gameState.game.status || 'Unavailable'}</h3>
                             <h3>{gameState.game.status === 'playing' ? `Round ${gameState.game.currentRound || ''}` : ''}</h3>
                             <p className='text-secondary'>
